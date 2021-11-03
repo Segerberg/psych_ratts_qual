@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inledande dokumentation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="bookReader/BookReader.css"/>
+
+    <script src="bookReader/webcomponents-bundle.js"></script>
+    <script src="bookReader/jquery-1.10.1.js"></script>
+
+
+    <script src="bookReader/BookReader.js"></script>
+
+    <!-- Plugins -->
+    <script src="bookReader/plugins/plugin.iframe.js"></script>
+
+    <style>
+        html, body, #BookReader {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body style="background-color: #939598;">
+
+<div id="BookReader">
+    <br/>
+
+    <noscript>
+        <p>
+            The BookReader requires JavaScript to be enabled. Please check that your browser supports JavaScript and
+            that it is enabled in the browser settings. You can also try one of the <a
+                href="https://archive.org/details/goodytwoshoes00newyiala"> other formats of the book</a>.
+        </p>
+    </noscript>
+</div>
+
+
+<script type="text/javascript">
+    var options = {
+
+        controls: {
+            bookLeft: {
+                visible: true,
+                label: 'Flip left',
+                className: 'book_left',
+                iconClassName: 'left-arrow'
+            },
+            bookRight: {
+                visible: true,
+                label: 'Flip right',
+                className: 'book_right',
+                iconClassName: 'left-arrow hflip'
+            },
+            onePage: {
+                visible: true,
+                label: 'One-page view',
+                className: 'onepg',
+                iconClassName: 'onepg'
+            },
+            twoPage: {
+                visible: true,
+                label: 'Two-page view',
+                className: 'twopg',
+                iconClassName: 'twopg'
+            },
+            thumbnail: {
+                visible: true,
+                label: 'Thumbnail view',
+                className: 'thumb',
+                iconClassName: 'thumb'
+            },
+            viewmode: {
+                visible: true,
+                className: 'viewmode',
+                excludedModes: [],
+            },
+            zoomOut: {
+                visible: true,
+                label: 'Zoom out',
+                className: 'zoom_out',
+                iconClassName: 'magnify'
+            },
+            zoomIn: {
+                visible: true,
+                label: 'Zoom in',
+                className: 'zoom_in',
+                iconClassName: 'magnify plus'
+            },
+            fullScreen: {
+                visible: false,
+                label: 'Toggle fullscreen',
+                className: 'full',
+                iconClassName: 'fullscreen'
+            },
+        },
+
+        data: [
+            [
+                {
+                    width: 1275, height: 1650,
+                    uri: 'media/efter_team_1/jpg/001_Rapport_fran_avdelningen.jpg'
+                },
+                {
+                    width: 1275, height: 1650,
+                    uri: 'media/efter_team_1/jpg/002_Belastningsreg_utdrag.jpg'
+                },
+            ],
+            [
+                {
+                    width: 1275, height: 1650,
+                    uri: 'media/efter_team_1/jpg/003_Journal_akutmottagning.jpg'
+                },
+                {
+                    width: 1275, height: 1650,
+                    uri: 'media/efter_team_1/jpg/004_Journal_vardcentral.jpg'
+                },
+            ]
+        ],
+
+        // Book title and the URL used for the book title link
+        bookTitle: 'Information (team 1)',
+        //bookUrl: 'https://archive.org/details/BookReader',
+        //bookUrlText: 'Back to Archive.org',
+        //bookUrlTitle: 'Back to Archive.org',
+
+
+        // thumbnail is optional, but it is used in the info dialog
+        thumbnail: '//archive.org/download/BookReader/img/page014.jpg',
+        // Metadata is optional, but it is used in the info dialog
+        metadata: [
+            {label: 'Title', value: 'Open Library BookReader Presentation'},
+            {label: 'Author', value: 'Internet Archive'},
+            {label: 'Demo Info', value: 'This demo shows how one could use BookReader with their own content.'},
+        ],
+
+        // Override the path used to find UI images
+        imagesBaseURL: '../BookReader/images/',
+
+        ui: 'embed', // embed, full (responsive)
+
+        el: '#BookReader',
+    };
+    var br = new BookReader(options);
+    br.init();
+</script>
+
+</body>
+</html>
